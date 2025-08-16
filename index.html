@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giới thiệu bản thân</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header style="background-image: url('assets/tuoi-tho-manh-liet.png'); background-size: cover; background-position: center;">
+        <img src="assets/background.png" alt="Ảnh đại diện" class="avatar">
+        <h1>K Pă Y San Hy</h1>
+        <p class="slogan">Deverloper and Network Administrator</p>
+        <nav>
+            <ul>
+                <li><a href="#about">Giới thiệu</a></li>
+                <li><a href="#skills">Kỹ năng</a></li>
+                <li><a href="#projects">Dự án</a></li>
+                <li><a href="#contact">Liên hệ</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="about">
+            <h2>Giới thiệu</h2>
+            <p>Hiện là sinh viên ngành Công nghệ Thông tin tại Cao đẳng giao thông vận tải. Tôi có niềm đam mê với lập trình, công nghệ và luôn nỗ lực học hỏi để phát triển bản thân trong lĩnh vực phần mềm, trí tuệ nhân tạo và an ninh mạng.
+                Trong quá trình học tập, tôi đã được tiếp cận với các ngôn ngữ lập trình ,làm việc với các công nghệ web như HTML, CSS, JavaScript, cũng như một số framework phổ biến như ReactJS.Cũng như về phần cứng máy tính và mạng máy tính
+                Tôi mong muốn được thực tập/làm việc trong môi trường chuyên nghiệp để có thể học hỏi thêm kinh nghiệm thực tế, đóng góp vào sự phát triển của công ty và từng bước hoàn thiện bản thân trên con đường trở thành một kỹ sư phần mềm giỏi.
+            </p>
+        </section>
+        <section id="skills">
+            <h2>Kỹ năng</h2>
+            <ul class="skills-list">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>React</li>
+                <li>Network</li>
+            </ul>
+            <canvas id="skillsChart" width="400" height="200"></canvas>
+        </section>
+        <section id="projects">
+            <h2>Dự án</h2>
+            <div class="project">
+                <img src="assets/z6493139403075_2ef9d1e95a863969975d7f2b33b9d706 - Sao chép.jpg" alt="Wild Horse Logo">
+                <h3>Wild Horse (WH)</h3>
+                <p># Wild Horse
+                <br>
+                    Wild Horse là một dự án sàn giao dịch phi tập trung (Decentralized Perpetual Exchange) kết hợp mô hình meme và NFT
+                    gameplay trên mạng Solana.
+                <br>
+                    ## Tính năng nổi bật
+                <br>
+                    - **NFT Game**: Người dùng sở hữu và nâng cấp ngựa để tham gia đua kiếm token WHE.<br>
+                    - **Staking**: Kiếm phần thưởng bằng cách stake token.<br>
+                    - **Referral Program**: Nhận thưởng khi giới thiệu bạn bè.<br>
+                    - **Tokenomics minh bạch**: Thông tin phân bổ token rõ ràng.<br>
+                    - **Lộ trình phát triển**: Đầy đủ các giai đoạn từ phát triển, ra mắt, đến mở rộng cộng đồng.<br>
+                <br>
+                    - Twitter: [Wild_Horse25](https://x.com/Wild_Horse25)
+                <br>
+                    > Để đóng góp hoặc phát triển thêm, hãy fork repo và gửi pull request.
+                    <br>
+                <!-- <a href="../WildHorse2.com/index.html" target="_blank">Xem chi tiết dự án</a></p> -->
+            </div>
+            <div class="project">
+                <img src="assets/coin - Sao chép.png" alt="Sunny Land Game">
+                <h3>Sunny-Land-Server-Copy</h3>
+                <p>Dự án phát triển game NFT tương tự Mario. <br>
+                    Canvas Boilerplate is the go-to solution for quickly creating modern canvas pieces using ES6 and webpack.<br>
+                    ## Getting Started<br>
+                    1. Clone the repo:<br>
+                    git clone https://github.com/christopher4lis/canvas-boilerplate.git<br>
+                    2. Install dependencies:<br>
+                    npm install<br>
+                    3. Run webpack:<br>
+                    npm start<br>
+                    Your canvas piece should open up automatically at http://localhost:3000 and you should see 'HTML CANVAS BOILERPLATE'
+                    on hover.<br>
+                    <!-- <a href="../Sunny-Land-Server - Copy/platformer-game/index.html" target="_blank">Chơi thử game</a></p> -->
+            </div>
+        </section>
+        <section id="contact">
+            <h2>Liên hệ</h2>
+            <form id="contactForm">
+                <input type="text" name="name" placeholder="Họ và tên" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <textarea name="message" placeholder="Nội dung" required></textarea>
+                <button type="submit">Gửi</button>
+            </form>
+            <br>
+            <form id="contactForm2">
+                <li>Số điện thoại: 0855654656</li>
+                <li>Email: sanhysky@gmail.com</li>
+                <li>Website: https://github.com/sanhy02</li>
+                <li>Địa chỉ: 559 quốc lộ 50, Bình Hưng, Bình Chánh,TP HCM</li>
+            </form>
+            <div id="contactResult"></div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; K Pă Y San Hy. Kết nối: 
+            <a href="https://www.facebook.com/san.hy.262606/">Facebook</a> | 
+            <a href="https://www.instagram.com/_sanhyy_/?__pwa=1">Instagram</a>
+        </p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
