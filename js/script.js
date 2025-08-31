@@ -1,4 +1,4 @@
-// toggle icon navbar
+// toggle icon navbar mở/đóng menu trên mobile
 
 let menuIcon = document.querySelector("#menu-icon");
 let navbar = document.querySelector(".navbar");
@@ -7,8 +7,8 @@ menuIcon.onclick = () => {
   navbar.classList.toggle("active");
 };
 
-// Scroll Sections Active Links
-
+// Scroll Sections Active Links | Highlight menu theo section khi cuộn trang
+ 
 let sections = document.querySelectorAll("section");
 let navLinks = document.querySelectorAll("header nav a");
 
@@ -29,7 +29,7 @@ window.onscroll = () => {
     }
   });
 
-  // Sticky navbar
+  // Sticky navbar | header dính trên cùng khi cuộn xuống
 
   let header = document.querySelector("header");
   header.classList.toggle("sticky", window.scrollY > 100);
