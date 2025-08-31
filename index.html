@@ -1,107 +1,256 @@
 <!DOCTYPE html>
-<html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giới thiệu bản thân</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header style="background-image: url('assets/tuoi-tho-manh-liet.png'); background-size: cover; background-position: center;">
-        <img src="assets/background.png" alt="Ảnh đại diện" class="avatar">
-        <h1>K Pă Y San Hy</h1>
-        <p class="slogan">Deverloper and Network Administrator</p>
-        <nav>
-            <ul>
-                <li><a href="#about">Giới thiệu</a></li>
-                <li><a href="#skills">Kỹ năng</a></li>
-                <li><a href="#projects">Dự án</a></li>
-                <li><a href="#contact">Liên hệ</a></li>
-            </ul>
-        </nav>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Poppins&family=Questrial&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- boxicons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- header -->
+    <header class="header">
+      <a href="#" class="logo">Portfolio</a>
+
+      <i class="bx bx-menu" id="menu-icon"></i>
+
+      <nav class="navbar">
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </header>
-    <main>
-        <section id="about">
-            <h2>Giới thiệu</h2>
-            <p>Hiện là sinh viên ngành Công nghệ Thông tin tại Cao đẳng giao thông vận tải. Tôi có niềm đam mê với lập trình, công nghệ và luôn nỗ lực học hỏi để phát triển bản thân trong lĩnh vực phần mềm, trí tuệ nhân tạo và an ninh mạng.
-                Trong quá trình học tập, tôi đã được tiếp cận với các ngôn ngữ lập trình ,làm việc với các công nghệ web như HTML, CSS, JavaScript, cũng như một số framework phổ biến như ReactJS.Cũng như về phần cứng máy tính và mạng máy tính
-                Tôi mong muốn được thực tập/làm việc trong môi trường chuyên nghiệp để có thể học hỏi thêm kinh nghiệm thực tế, đóng góp vào sự phát triển của công ty và từng bước hoàn thiện bản thân trên con đường trở thành một kỹ sư phần mềm giỏi.
-            </p>
-        </section>
-        <section id="skills">
-            <h2>Kỹ năng</h2>
-            <ul class="skills-list">
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>JavaScript</li>
-                <li>React</li>
-                <li>Network</li>
-            </ul>
-            <canvas id="skillsChart" width="400" height="200"></canvas>
-        </section>
-        <section id="projects">
-            <h2>Dự án</h2>
-            <div class="project">
-                <img src="assets/z6493139403075_2ef9d1e95a863969975d7f2b33b9d706 - Sao chép.jpg" alt="Wild Horse Logo">
-                <h3>Wild Horse (WH)</h3>
-                <p># Wild Horse
-                <br>
-                    Wild Horse là một dự án sàn giao dịch phi tập trung (Decentralized Perpetual Exchange) kết hợp mô hình meme và NFT
-                    gameplay trên mạng Solana.
-                <br>
-                    ## Tính năng nổi bật
-                <br>
-                    - **NFT Game**: Người dùng sở hữu và nâng cấp ngựa để tham gia đua kiếm token WHE.<br>
-                    - **Staking**: Kiếm phần thưởng bằng cách stake token.<br>
-                    - **Referral Program**: Nhận thưởng khi giới thiệu bạn bè.<br>
-                    - **Tokenomics minh bạch**: Thông tin phân bổ token rõ ràng.<br>
-                    - **Lộ trình phát triển**: Đầy đủ các giai đoạn từ phát triển, ra mắt, đến mở rộng cộng đồng.<br>
-                <br>
-                    - Twitter: [Wild_Horse25](https://x.com/Wild_Horse25)
-                <br>
-                    > Để đóng góp hoặc phát triển thêm, hãy fork repo và gửi pull request.
-                    <br>
-                <a href="https://sanhy02.github.io/Web_Coin/" target="_blank">Xem chi tiết dự án</a></p>
-            </div>
-            <div class="project">
-                <img src="assets/coin - Sao chép.png" alt="Sunny Land Game">
-                <h3>Sunny-Land-Server-Copy</h3>
-                <p>Dự án phát triển game NFT tương tự Mario. <br>
-                    Canvas Boilerplate is the go-to solution for quickly creating modern canvas pieces using ES6 and webpack.<br>
-                    ## Getting Started<br>
-                    1. Clone the repo:<br>
-                    2. Install dependencies:<br>
-                    npm install<br>
-                    3. Run webpack:<br>
-                    npm start<br>
-                    <!-- <a href="../Sunny-Land-Server - Copy/platformer-game/index.html" target="_blank">Chơi thử game</a></p> -->
-            </div>
-        </section>
-        <section id="contact">
-            <h2>Liên hệ</h2>
-            <form id="contactForm">
-                <input type="text" name="name" placeholder="Họ và tên" required>
-                <input type="email" name="email" placeholder="Email" required>
-                <textarea name="message" placeholder="Nội dung" required></textarea>
-                <button type="submit">Gửi</button>
-            </form>
-            <br>
-            <form id="contactForm2">
-                <li>Số điện thoại: 0855654656</li>
-                <li>Email: sanhysky@gmail.com</li>
-                <li>Github: https://github.com/sanhy02</li>
-                <li>Địa chỉ: 559 quốc lộ 50, Bình Hưng, Bình Chánh,TP HCM</li>
-            </form>
-            <div id="contactResult"></div>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; K Pă Y San Hy. Connect: 
-            <a href="https://www.facebook.com/san.hy.262606/">Facebook</a> | 
-            <a href="https://www.instagram.com/_sanhyy_/?__pwa=1">Instagram</a> |
-            <a href="https://github.com/sanhy02">Github</a>
+
+    <!-- Home Section -->
+
+    <section class="home" id="home">
+      <div class="home-content">
+        <h3>Hello, It's Me</h3>
+        <h1>K Pa Y San Hy</h1>
+        <h3>And I'm a <span class="multiple-text"></span></h3>
+        <p>
+          Welcome to my creative portfolio! Here you'll find a glimpse into
+          the diverse range of my skills and interests. I am a versatile and
+          creative individual who enjoys exploring various art forms. I am
+          always eager to collaborate with others and take on new challenges.
+          Thank you for visiting my portfolio, and I look forward to creating
+          something amazing together.
         </p>
+        <br>
+        <p>Chào mừng bạn đến với portfolio sáng tạo của tôi!
+            Tại đây, bạn sẽ bắt gặp một phần trong những kỹ năng và sở thích đa dạng của tôi. Tôi là một người sáng tạo và linh hoạt, yêu thích khám phá nhiều loại hình nghệ thuật khác nhau. Tôi luôn háo hức được hợp tác với mọi người và đón nhận những thử thách mới. Cảm ơn bạn đã ghé thăm portfolio của tôi, và tôi mong chờ sẽ cùng nhau tạo nên điều tuyệt vời.
+        </p>
+        <div class="social-media">
+          <a href="https://www.facebook.com/san.hy.262606/?locale=vi_VN"><i class="bx bxl-facebook"></i></a>
+          <!-- <a href="#"><i class="bx bxl-twitter"></i></a> -->
+          <a href="https://www.instagram.com/_sanhyy_/?__pwa=1"><i class="bx bxl-instagram"></i></a>
+          <a href="https://www.youtube.com/@SanHyhandsome02"><i class="bx bxl-youtube"></i></a>
+          <!-- <a href="#"><i class="bx bxl-linkedin"></i></a> -->
+        </div>
+        <a href="assets/cv.pdf" class="btn">Download CV</a>
+      </div>
+
+      <div class="home-img">
+        <img src="images/profile.png" alt="" />
+      </div>
+    </section>
+
+    <!-- about -->
+    <section class="about" id="about">
+      <div class="about-img">
+        <img src="images/about.png" alt="" />
+      </div>
+
+      <div class="about-content">
+        <h2 class="heading">About <span>Me</span></h2>
+        <h3>Frontend Developer!</h3>
+        <p>
+          I am a versatile and creative designer with expertise in editor,
+          app,eardware engineer, and website design. With a strong eye for aesthetics and a keen
+          understanding of user experience, I create visually stunning and
+          engaging designs that deliver results. I have experience working on
+          projects ranging from branding and marketing campaigns to user
+          interface design, brand logos and app interface.
+        </p>
+        <br>
+        <p>
+          Tôi là một nhà thiết kế sáng tạo và đa năng, có chuyên môn trong chỉnh sửa, thiết kế ứng dụng, kỹ thuật phần cứng và thiết kế website. Với con mắt thẩm mỹ tinh tế cùng sự am hiểu sâu sắc về trải nghiệm người dùng, tôi tạo ra những thiết kế trực quan ấn tượng, cuốn hút và mang lại hiệu quả. Tôi có kinh nghiệm tham gia nhiều dự án đa dạng, từ xây dựng thương hiệu, chiến dịch marketing đến thiết kế giao diện người dùng, logo thương hiệu và giao diện ứng dụng.
+        </p>
+        <a href="#" class="btn">Read More</a>
+      </div>
+    </section>
+
+    <!-- services -->
+
+    <section class="services" id="services">
+      <h2 class="heading">Our <span>Services</span></h2>
+      <div class="services-container">
+        <div class="services-box">
+          <i class="bx bx-code-alt"></i>
+          <h3>Web Development</h3>
+          <p>
+            I have created a Website called WILD HOURSE to introduction about my new coin.
+          </p>
+          <br>
+          <p>
+            Tôi đã tạo ra một website mang tên WILD HORSE để giới thiệu về đồng coin mới của mình.
+          </p>
+          <a href="https://sanhy02.github.io/Web_Coin/" class="btn">Read More</a>
+        </div>
+
+        <div class="services-box">
+          <i class="bx bxs-game"></i>
+          <h3>Game Design</h3>
+          <p>
+            I have developed an NFT-based game where players can join, play, and earn coins through the characters they purchase.
+          </p>
+          <br>
+          <p>
+            Tôi đã phát triển một trò chơi dựa trên NFT, nơi người chơi có thể tham gia, trải nghiệm và kiếm coin thông qua các nhân vật mà họ mua.
+          </p>
+          <a href="#" class="btn">Read More</a>
+        </div>
+
+        <div class="services-box">
+          <i class="bx bxs-pencil"></i>
+          <h3>Application</h3>
+          <p>
+            I developed a To-Do List application that allows users to record their daily tasks, making it easier to manage and organize their work more efficiently.
+          </p>
+          <br>
+          <p>
+            Tôi đã phát triển một ứng dụng To-Do List giúp người dùng ghi lại các công việc hằng ngày, từ đó dễ dàng quản lý và sắp xếp công việc hiệu quả hơn.
+          </p>
+          <a href="#" class="btn">Read More</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Section -->
+
+    <section class="portfolio" id="portfolio">
+      <h2 class="heading">Latest <span>Project</span></h2>
+
+      <div class="portfolio-container">
+        <div class="portfolio-box">
+          <img src="images/port1.jpg" alt="" />
+          <div class="portfolio-layer">
+            <h4>WILD HOURSE</h4>
+            <p>
+              My own personal artwork website.
+            </p>
+            <a href="https://sanhy02.github.io/Web_Coin/"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+
+        <div class="portfolio-box">
+          <img src="images/port2.jpg" alt="" />
+          <div class="portfolio-layer">
+            <h4>Portfolio</h4>
+            <p>
+              A portfolio Website
+            </p>
+            <a href="https://mgvportfolio.netlify.app"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+
+        <!-- <div class="portfolio-box">
+          <img src="images/port3.jpg" alt="" />
+          <div class="portfolio-layer">
+            <h4>Artisans Avenue</h4>
+            <p>
+              An E-Commerce website to sell the Artworks
+            </p>
+            <a href="#"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div> -->
+
+        <div class="portfolio-box">
+          <img src="images/port4.jpg" alt="" />
+          <div class="portfolio-layer">
+            <h4>Pending..</h4>
+            <p>
+              Under Development
+            </p>
+            <a href="#"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+
+        <div class="portfolio-box">
+          <img src="images/port5.jpg" alt="" />
+          <div class="portfolio-layer">
+            <h4>Pending..</h4>
+            <p>
+              Under Development
+            </p>
+            <a href="#"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+
+
+        </div>
+      </div>
+    </section>
+
+    <!-- contact -->
+
+    <section class="contact" id="contact">
+      <h2 class="heading">Contact <span>Me!</span></h2>
+
+      <form action="mailto:sanhysky@gmail.com" method="post" enctype="text/plain">
+        <div class="input-box">
+          <input type="text" placeholder="Full Name" />
+          <input type="email" placeholder="Email Address" />
+        </div>
+        <div class="input-box">
+          <input type="number" placeholder="Mobile Number" />
+          <input type="text" placeholder="Email Subject" />
+        </div>
+        <textarea
+          name=""
+          id=""
+          cols="30"
+          rows="10"
+          placeholder="Your Message"
+        ></textarea>
+        <input type="submit" value="Send Message" class="btn" />
+      </form>
+    </section>
+
+    <!-- footer -->
+
+    <footer class="footer">
+      <div class="footer-text">
+        <p>Copyright &copy; 2023 by K Pa Y San Hy | All Rights Reserved|</p>
+      </div>
+
+      <div class="footer-iconTap">
+        <a href="#home"><i class="bx bx-up-arrow-alt"></i></a>
+      </div>
     </footer>
-    <script src="script.js"></script>
-</body>
+
+    <!-- Scroll reveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- typed js -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+    <!-- custom js -->
+    <script src="./js/script.js"></script>
+  </body>
 </html>
