@@ -532,3 +532,130 @@ span {
     }
 
 }
+
+/* ========== RESPONSIVE DESIGN - TABLET (768px - 1024px) ========== */
+@media (max-width: 1024px) {
+    section {
+        padding: 10rem 5% 2rem;
+    }
+
+    .header {
+        padding: 2rem 5%;
+    }
+
+    .logo {
+        font-size: 2rem;
+    }
+
+    .navbar a {
+        margin-left: 2rem;
+        font-size: 1.5rem;
+    }
+}
+
+/* ========== RESPONSIVE DESIGN - MOBILE (480px - 768px) ========== */
+@media (max-width: 768px) {
+    #menu-icon {
+        display: block;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 3%;
+        background: var(--second-bg-color);
+        border-top: .1rem solid rgba(0, 0, 0, .2);
+        display: none;
+    }
+
+    .navbar.active {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .navbar a {
+        display: block;
+        margin: 1rem 0;
+        font-size: 1.6rem;
+    }
+
+    section {
+        padding: 7rem 3% 2rem;
+    }
+
+    .header {
+        padding: 1.5rem 3%;
+    }
+
+    .home {
+        flex-direction: column;
+    }
+
+    .home-content h1 {
+        font-size: 2.6rem;
+    }
+
+    .home-content h3 {
+        font-size: 2rem;
+    }
+
+    .about {
+        flex-direction: column;
+    }
+
+    .about-img img {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .skills {
+        flex-direction: column;
+    }
+
+    .skills-content {
+        width: 100%;
+    }
+
+    .contact form {
+        flex-direction: column;
+    }
+}
+
+/* ========== RESPONSIVE DESIGN - SMALL MOBILE (320px - 480px) ========== */
+@media (max-width: 480px) {
+    html {
+        font-size: 55%;
+    }
+
+    .logo {
+        font-size: 1.8rem;
+    }
+
+    section {
+        min-height: auto;
+        padding: 5rem 3% 2rem;
+    }
+
+    .home-content h1 {
+        font-size: 2rem;
+    }
+
+    .home-content h3 {
+        font-size: 1.4rem;
+    }
+
+    .about-content h2,
+    .skills-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .contact-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .portfolio-container {
+        grid-template-columns: 1fr;
+    }
+}
