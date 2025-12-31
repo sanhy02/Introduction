@@ -7,6 +7,32 @@ menuIcon.onclick = () => {
   navbar.classList.toggle("active");
 };
 
+// Dark Mode / Light Mode Toggle
+
+let themeToggle = document.querySelector("#theme-toggle");
+let htmlElement = document.documentElement;
+let body = document.body;
+
+// Kiểm tra theme đã lưu trước đó
+const savedTheme = localStorage.getItem("theme") || "dark-mode";
+if (savedTheme === "light-mode") {
+  body.classList.add("light-mode");
+  themeToggle.innerHTML = '<i class="bx bx-sun"></i>';
+}
+
+// Toggle theme khi click nút
+themeToggle.onclick = () => {
+  body.classList.toggle("light-mode");
+  
+  if (body.classList.contains("light-mode")) {
+    themeToggle.innerHTML = '<i class="bx bx-sun"></i>';
+    localStorage.setItem("theme", "light-mode");
+  } else {
+    themeToggle.innerHTML = '<i class="bx bx-moon"></i>';
+    localStorage.setItem("theme", "dark-mode");
+  }
+};
+
 // Scroll Sections Active Links | Highlight menu theo section khi cuộn trang
  
 let sections = document.querySelectorAll("section");

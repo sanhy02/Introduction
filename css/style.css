@@ -10,27 +10,52 @@
 }
 
 :root {
-    --bg-color: #1f242d;
-    --second-bg-color: #323946;
-    --text-color: #fff;
-    --main-color: #0ef;
+    /* Màu nền - Dark Mode (mặc định) */
+    --bg-color: #0D0C22;
+    --second-bg-color: #3A3546;
+    
+    /* Màu text */
+    --text-color: #FFFFFF;
+    --text-secondary: #CCD0D8;
+    --text-light: #9E9EA7;
+    
+    /* Màu nhấn (accent) - Xanh lá nhạt */
+    --main-color: #00D4AA;
+    --accent-purple: #3E34D3;
+    
+    /* Màu bổ sung */
+    --border-color: #524B63;
+    --hover-color: #655C7A;
+}
+
+/* Light Mode */
+body.light-mode {
+    --bg-color: #F5F5F6;
+    --second-bg-color: #FFFFFF;
+    
+    --text-color: #0D0C22;
+    --text-secondary: #3A3546;
+    --text-light: #524B63;
+    
+    --border-color: #E0E0E0;
+    --hover-color: #E8E8E8;
 }
 
 html {
     font-size: 62.5%;
     overflow-x: hidden;
-
 }
 
 body {
     background: var(--bg-color);
     color: var(--text-color);
-    overflow-y: hidden;
+    overflow-x: hidden;
 }
 
 section {
     min-width: 100vh;
     padding: 10rem 9% 2rem;
+    max-width: 100%;
 }
 
 .header {
@@ -47,7 +72,7 @@ section {
 }
 
 .header.sticky {
-    border-bottom: .1rem solid rgba(0, 0, 0, .2);
+    border-bottom: .1rem solid var(--border-color);
 }
 
 .logo {
@@ -79,6 +104,20 @@ section {
     display: none;
 }
 
+#theme-toggle {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: .3s;
+    padding: 0.5rem;
+}
+
+#theme-toggle:hover {
+    color: var(--main-color);
+}
+
 .home {
     display: flex;
     justify-content: center;
@@ -108,8 +147,10 @@ span {
     width: 30vw;
     height: 30vw;
     animation: floatImage 4s ease-in-out infinite;
-    border-radius: 50%;
+    border-radius: 2rem;
     object-fit: cover;
+    object-position: center 25%;
+    max-width: 350px;
 }
 
 @keyframes floatImage {
@@ -126,6 +167,7 @@ span {
 
 .home-content p {
     font-size: 1.6rem;
+    color: var(--text-secondary);
 }
 
 
@@ -160,10 +202,11 @@ span {
     border-radius: 4rem;
     box-shadow: 0 0 1rem var(--main-color);
     font-size: 1.6rem;
-    color: var(--second-bg-color);
+    color: #FFFFFF;
     letter-spacing: .1rem;
     font-weight: 600;
     transition: .5s ease;
+    white-space: nowrap;
 }
 
 .btn:hover {
@@ -180,6 +223,8 @@ span {
 
 .about-img img {
     width: 40vw;
+    max-width: 450px;
+    height: auto;
 }
 
 .heading {
@@ -200,6 +245,7 @@ span {
 .about-content p {
     font-size: 1.6rem;
     margin: 2rem 0 3rem;
+    color: var(--text-secondary);
 }
 
 
@@ -221,7 +267,7 @@ span {
     padding: 3rem 2rem 4rem;
     border-radius: 2rem;
     text-align: center;
-    border: .2rem solid var(--bg-color);
+    border: .2rem solid var(--border-color);
     transition: .5s ease;
 }
 
@@ -242,6 +288,7 @@ span {
 .services-box p {
     font-size: 1.6rem;
     margin: 1rem 0 3rem;
+    color: var(--text-secondary);
 }
 
 
@@ -283,7 +330,7 @@ span {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(rgba(0, 0, 0, .1), var(--main-color));
+    background: linear-gradient(rgba(13, 12, 34, 0.5), var(--main-color));
     display: flex;
     justify-content: center;
     align-items: center;
@@ -346,8 +393,16 @@ span {
     font-size: 1.6rem;
     color: var(--text-color);
     background: var(--second-bg-color);
+    border: .1rem solid var(--border-color);
     border-radius: .8rem;
     margin: .7rem 0;
+    transition: .3s;
+}
+
+.contact form .input-box input:focus,
+.contact form textarea:focus {
+    border-color: var(--main-color);
+    box-shadow: 0 0 1rem rgba(234, 76, 137, 0.3);
 }
 
 .contact form .input-box input {
@@ -363,6 +418,16 @@ span {
     cursor: pointer;
 }
 
+.contact-content {
+    font-size: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 15rem;
+
+}
+
 .footer {
     display: flex;
     justify-content: space-between;
@@ -374,6 +439,7 @@ span {
 
 .footer-text p {
     font-size: 1.6rem;
+    color: var(--text-secondary);
 }
 
 .footer-iconTap a {
@@ -397,15 +463,19 @@ span {
 
 
 
-/* breakpoints */
-
+/* ========== RESPONSIVE DESIGN - DESKTOP (1200px and up) ========== */
 @media (max-width: 1200px) {
     html {
         font-size: 55%;
     }
 }
 
+/* ========== RESPONSIVE DESIGN - LAPTOP/TABLET (992px - 1199px) ========== */
 @media (max-width: 991px) {
+    html {
+        font-size: 56%;
+    }
+
     .header {
         padding: 2rem 3%;
     }
@@ -429,9 +499,75 @@ span {
     .contact {
         min-height: auto;
     }
+
+    .home {
+        flex-direction: column;
+    }
+
+    .about {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .about-img img {
+        width: 50vw;
+        margin-top: 2rem;
+    }
+
+    .portfolio-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
+/* ========== RESPONSIVE DESIGN - TABLET (768px - 991px) ========== */
+@media (max-width: 991px) and (min-width: 768px) {
+    html {
+        font-size: 54%;
+    }
+
+    section {
+        padding: 8rem 5% 2rem;
+    }
+
+    .header {
+        padding: 2rem 5%;
+    }
+
+    .navbar a {
+        margin-left: 2rem;
+        font-size: 1.5rem;
+    }
+
+    .home-content h1 {
+        font-size: 4rem;
+    }
+
+    .home-content h3 {
+        font-size: 2.4rem;
+    }
+
+    .home-img img {
+        width: 50vw;
+        margin-top: 3rem;
+        object-position: center 25%;
+    }
+
+    .about-img img {
+        width: 60vw;
+    }
+
+    .portfolio-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+/* ========== RESPONSIVE DESIGN - MOBILE LANDSCAPE & SMALL TABLET (768px) ========== */
 @media (max-width: 768px) {
+    html {
+        font-size: 52%;
+    }
+
     #menu-icon {
         display: block;
     }
@@ -446,50 +582,167 @@ span {
         border-top: .1rem solid rgba(0, 0, 0, .2);
         box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
         display: none;
+        flex-direction: column;
     }
 
     .navbar.active {
-        display: block;
+        display: flex;
     }
 
     .navbar a {
         display: block;
-        font-size: 2rem;
-        margin: 3rem 0;
+        font-size: 1.8rem;
+        margin: 2rem 0;
+    }
+
+    section {
+        min-width: auto;
+        padding: 8rem 4% 2rem;
+    }
+
+    .header {
+        padding: 2rem 4%;
     }
 
     .home {
         flex-direction: column;
+        gap: 2rem;
     }
 
     .home-content h3 {
-        font-size: 2.6rem;
+        font-size: 2.4rem;
     }
 
     .home-content h1 {
-        font-size: 5rem;
+        font-size: 3.6rem;
+    }
+
+    .home-content p {
+        font-size: 1.4rem;
     }
 
     .home-img img {
-        width: 70vw;
-        margin-top: 4rem;
+        width: 65vw;
+        max-width: 250px;
+        margin-top: 2rem;
+        object-position: center 20%;
     }
 
     .about {
         flex-direction: column;
+        gap: 2rem;
     }
 
-    .about img {
-        width: 70vh;
-        margin-top: 4rem;
+    .about-img img {
+        width: 60vw;
+        max-width: 300px;
+        margin-top: 2rem;
+    }
+
+    .about-content h2 {
+        font-size: 3rem;
+    }
+
+    .about-content h3 {
+        font-size: 2rem;
+    }
+
+    .about-content p {
+        font-size: 1.4rem;
+    }
+
+    .services-container {
+        flex-direction: column;
+    }
+
+    .services-container .services-box {
+        flex: 1 1 100%;
     }
 
     .services h2 {
-        margin-bottom: 3rem;
+        font-size: 3rem;
+        margin-bottom: 2rem;
+    }
+
+    .services-box h3 {
+        font-size: 2.2rem;
+    }
+
+    .services-box p {
+        font-size: 1.4rem;
     }
 
     .portfolio h2 {
-        margin-bottom: 3rem;
+        font-size: 3rem;
+        margin-bottom: 2rem;
+    }
+
+    .portfolio-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .portfolio-layer h4 {
+        font-size: 2rem;
+    }
+
+    .portfolio-layer p {
+        font-size: 1.3rem;
+    }
+
+    .contact h2 {
+        font-size: 3rem;
+    }
+
+    .contact form {
+        max-width: 100%;
+        padding: 0 1rem;
+    }
+
+    .contact form .input-box {
+        flex-direction: column;
+    }
+
+    .contact form .input-box input,
+    .contact form textarea {
+        width: 100%;
+        padding: 1.2rem;
+        font-size: 1.4rem;
+    }
+
+    .footer {
+        flex-direction: column;
+        padding: 2rem 4%;
+        gap: 2rem;
+    }
+
+    .footer-text p {
+        font-size: 1.4rem;
+        text-align: center;
+    }
+
+    .footer-iconTap {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* ========== RESPONSIVE DESIGN - LARGE MOBILE (481px - 767px) ========== */
+@media (max-width: 767px) and (min-width: 481px) {
+    html {
+        font-size: 50%;
+    }
+
+    .header {
+        padding: 1.8rem 4%;
+    }
+
+    .logo {
+        font-size: 2rem;
+    }
+
+    section {
+        padding: 7rem 4% 2rem;
     }
 
     .portfolio-container {
@@ -497,165 +750,280 @@ span {
     }
 }
 
-@media (max-width: 617px) {
-    .portfolio-container {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 450px) {
+/* ========== RESPONSIVE DESIGN - MEDIUM MOBILE (376px - 480px) ========== */
+@media (max-width: 480px) {
     html {
-        font-size: 50%;
-    }
-
-    .contact form .input-box input {
-        width: 100%;
-    }
-}
-
-@media (max-width: 365px) {
-    .home-img img {
-        width: 90vh;
-    }
-
-    .about-img img{
-        width: 90vh;
-    }
-
-    .footer {
-        flex-direction: column-reverse;
-    }
-
-    .footer p{
-        text-align: center;
-        margin-top: 2rem;
-    }
-
-}
-
-/* ========== RESPONSIVE DESIGN - TABLET (768px - 1024px) ========== */
-@media (max-width: 1024px) {
-    section {
-        padding: 10rem 5% 2rem;
-    }
-
-    .header {
-        padding: 2rem 5%;
-    }
-
-    .logo {
-        font-size: 2rem;
-    }
-
-    .navbar a {
-        margin-left: 2rem;
-        font-size: 1.5rem;
-    }
-}
-
-/* ========== RESPONSIVE DESIGN - MOBILE (480px - 768px) ========== */
-@media (max-width: 768px) {
-    #menu-icon {
-        display: block;
-    }
-
-    .navbar {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        padding: 1rem 3%;
-        background: var(--second-bg-color);
-        border-top: .1rem solid rgba(0, 0, 0, .2);
-        display: none;
-    }
-
-    .navbar.active {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .navbar a {
-        display: block;
-        margin: 1rem 0;
-        font-size: 1.6rem;
-    }
-
-    section {
-        padding: 7rem 3% 2rem;
+        font-size: 48%;
     }
 
     .header {
         padding: 1.5rem 3%;
     }
 
-    .home {
-        flex-direction: column;
-    }
-
-    .home-content h1 {
-        font-size: 2.6rem;
-    }
-
-    .home-content h3 {
-        font-size: 2rem;
-    }
-
-    .about {
-        flex-direction: column;
-    }
-
-    .about-img img {
-        width: 100%;
-        max-width: 400px;
-    }
-
-    .skills {
-        flex-direction: column;
-    }
-
-    .skills-content {
-        width: 100%;
-    }
-
-    .contact form {
-        flex-direction: column;
-    }
-}
-
-/* ========== RESPONSIVE DESIGN - SMALL MOBILE (320px - 480px) ========== */
-@media (max-width: 480px) {
-    html {
-        font-size: 55%;
-    }
-
     .logo {
         font-size: 1.8rem;
     }
 
+    #menu-icon {
+        font-size: 3rem;
+    }
+
     section {
         min-height: auto;
-        padding: 5rem 3% 2rem;
+        padding: 7rem 3% 2rem;
+    }
+
+    .home {
+        gap: 1.5rem;
+    }
+
+    .home-content h3 {
+        font-size: 1.8rem;
+        font-weight: 700;
+    }
+
+    .home-content h1 {
+        font-size: 2.4rem;
+    }
+
+    .home-content p {
+        font-size: 1.2rem;
+        line-height: 1.5;
+    }
+
+    .home-img img {
+        width: 80vw;
+        max-width: 200px;
+        margin-top: 1.5rem;
+        object-position: center 15%;
+    }
+
+    .social-media a {
+        width: 3.5rem;
+        height: 3.5rem;
+        margin: 2rem 1rem 2rem 0;
+    }
+
+    .btn {
+        padding: 0.8rem 2rem;
+        font-size: 1.4rem;
+        margin: 0.5rem 0;
+        display: block;
+        text-align: center;
+    }
+
+    .about {
+        gap: 1.5rem;
+    }
+
+    .about-content h2 {
+        font-size: 2.4rem;
+        text-align: left;
+    }
+
+    .about-content h3 {
+        font-size: 1.8rem;
+    }
+
+    .about-content p {
+        font-size: 1.2rem;
+        line-height: 1.5;
+    }
+
+    .about-img img {
+        width: 80vw;
+        max-width: 220px;
+    }
+
+    .heading {
+        font-size: 2.4rem;
+    }
+
+    .services h2 {
+        margin-bottom: 2rem;
+    }
+
+    .services-container {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .services-box {
+        padding: 2rem 1.5rem 3rem;
+    }
+
+    .services-box i {
+        font-size: 4rem;
+    }
+
+    .services-box h3 {
+        font-size: 1.8rem;
+    }
+
+    .services-box p {
+        font-size: 1.2rem;
+    }
+
+    .portfolio h2 {
+        margin-bottom: 2rem;
+    }
+
+    .portfolio-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .portfolio-layer {
+        padding: 0 2rem;
+    }
+
+    .portfolio-layer h4 {
+        font-size: 1.8rem;
+    }
+
+    .portfolio-layer p {
+        font-size: 1.2rem;
+    }
+
+    .contact h2 {
+        margin-bottom: 2rem;
+    }
+
+    .contact form {
+        max-width: 100%;
+        margin: 1rem auto;
+    }
+
+    .contact form .input-box {
+        flex-direction: column;
+    }
+
+    .contact form .input-box input,
+    .contact form textarea {
+        width: 100%;
+        padding: 1rem;
+        font-size: 1.4rem;
+        margin: 0.5rem 0;
+    }
+
+    .footer {
+        flex-direction: column-reverse;
+        gap: 1.5rem;
+    }
+
+    .footer-text p {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    .footer-iconTap {
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer-iconTap a {
+        margin: 0.5rem;
+    }
+}
+
+/* ========== RESPONSIVE DESIGN - SMALL MOBILE (320px - 375px) ========== */
+@media (max-width: 375px) {
+    html {
+        font-size: 46%;
+    }
+
+    .header {
+        padding: 1.3rem 2.5%;
+    }
+
+    .logo {
+        font-size: 1.6rem;
+    }
+
+    #menu-icon {
+        font-size: 2.5rem;
+    }
+
+    section {
+        padding: 6rem 2.5% 1.5rem;
+    }
+
+    .home-content h3 {
+        font-size: 1.6rem;
     }
 
     .home-content h1 {
         font-size: 2rem;
     }
 
-    .home-content h3 {
-        font-size: 1.4rem;
+    .home-content p {
+        font-size: 1.1rem;
     }
 
-    .about-content h2,
-    .skills-content h2 {
-        font-size: 1.8rem;
+    .home-img img {
+        width: 85vw;
+        max-width: 180px;
+        object-position: center 15%;
     }
 
-    .contact-content h2 {
-        font-size: 1.8rem;
+    .social-media a {
+        width: 3rem;
+        height: 3rem;
+        margin: 1.5rem 0.8rem 1.5rem 0;
     }
 
-    .portfolio-container {
-        grid-template-columns: 1fr;
+    .btn {
+        padding: 0.7rem 1.5rem;
+        font-size: 1.2rem;
+    }
+
+    .about-content h2 {
+        font-size: 2rem;
+    }
+
+    .about-content h3 {
+        font-size: 1.6rem;
+    }
+
+    .about-img img {
+        width: 85vw;
+        max-width: 180px;
+    }
+
+    .heading {
+        font-size: 2rem;
+    }
+
+    .services-box {
+        padding: 1.5rem 1rem 2.5rem;
+    }
+
+    .services-box i {
+        font-size: 3rem;
+    }
+
+    .services-box h3 {
+        font-size: 1.6rem;
+    }
+
+    .portfolio-layer h4 {
+        font-size: 1.5rem;
+    }
+
+    .footer {
+        padding: 1.5rem 2.5%;
+        flex-direction: column-reverse;
+    }
+
+    .footer-text p {
+        font-size: 1.1rem;
+    }
+
+    .footer-iconTap a {
+        padding: 0.6rem;
+    }
+
+    .footer-iconTap i {
+        font-size: 2rem;
     }
 }
